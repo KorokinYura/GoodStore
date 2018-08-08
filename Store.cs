@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace GoodStore
@@ -17,13 +16,12 @@ namespace GoodStore
 
         public static void Work()
         {
-            ShowMenu();
-
             string command = string.Empty;
 
             while (command != "0")
             {
-                command = string.Empty;
+                ShowMenu();
+
                 command = Console.ReadLine();
                 Console.WriteLine();
 
@@ -80,8 +78,6 @@ namespace GoodStore
             }
 
             Console.WriteLine("\nProduct has been succesfully added to the DB\n");
-
-            ShowMenu();
         }
 
         public static void AddInvoice()
@@ -142,7 +138,6 @@ namespace GoodStore
 
             Console.WriteLine("\nPress \"Enter\" to continue");
             Console.ReadLine();
-            ShowMenu();
         }
 
         private static IProductInDelivery AddProductToInvoice(IDelivery delivery, List<IProduct> products)
@@ -209,7 +204,6 @@ namespace GoodStore
 
             Console.WriteLine("\nPress \"Enter\" to continue");
             Console.ReadLine();
-            ShowMenu();
         }
 
         private static List<IProduct> GetProducts()
